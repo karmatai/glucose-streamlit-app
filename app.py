@@ -8,11 +8,10 @@ from tensorflow.keras.models import load_model
 # --------------------------
 @st.cache_resource
 def load_ai():
-    model = load_model("lstm_realdata_model_fixed.h5")
+    model = load_model("lstm_realdata_model_fixed.h5", compile=False)
     scaler = joblib.load("scaler.save")
     return model, scaler
 
-model, scaler = load_ai()
 
 # --------------------------
 # Streamlit UI
